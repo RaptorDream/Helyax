@@ -1,4 +1,9 @@
 package xyz.helyaxapps.venturenews;
 
-public class Main {
+public class Main
+{
+
+
+
+    
 }
