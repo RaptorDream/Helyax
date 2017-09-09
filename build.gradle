@@ -1,14 +1,31 @@
-group '1'
-version '1.0-SNAPSHOT'
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '1.2.4'
+}
 
-apply plugin: 'java'
+mainClassName = 'xyz.helyaxapps.venturenews.Main'
+
+version '1.0'
 
 sourceCompatibility = 1.8
 
 repositories {
+    jcenter()
     mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'com.google.api-client:google-api-client:1.22.0'
+    compile 'net.dv8tion:JDA:3.1.1_212'
+    compile 'com.sedmelluq:lavaplayer:1.2.39'
+    runtime 'ch.qos.logback:logback-classic:1.1.8'
+}
+
+compileJava.options.encoding = 'UTF-8'
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile 'com.google.api-client:google-api-client:1.22.0'
 }
