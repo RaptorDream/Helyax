@@ -8,6 +8,7 @@ import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
 import org.json.JSONObject;
 import xyz.helyaxapps.venturenews.commands.PingCommand;
+import xyz.helyaxapps.venturenews.listeners.UserStatusChecker;
 
 import javax.security.auth.login.LoginException;
 import java.io.File;
@@ -50,7 +51,7 @@ public class Main
         {
 
             jda = new JDABuilder(AccountType.BOT)
-                    .addEventListener(new PingCommand())
+                    .addEventListener(new PingCommand(), new UserStatusChecker())
                     .setToken(BOT_TOKEN)
                     .setGame(Game.of(BOT_GAME))
                     .buildAsync();
@@ -63,13 +64,12 @@ public class Main
 
         } catch (LoginException | IllegalArgumentException | RateLimitedException e) {
 
-<<<<<<< HEAD
-=======
+
             System.out.println(Instant.now() + " Failed to build a new instance of JDA");
             System.out.println(Instant.now().toString() + " Failed to build a new instance of JDA");
             e.printStackTrace();
         }
->>>>>>> 9547f0fd9059829b57cd8a3b85e9e0b9a3856504
+
 
     }
 
