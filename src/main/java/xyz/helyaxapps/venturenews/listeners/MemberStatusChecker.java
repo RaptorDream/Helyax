@@ -1,8 +1,16 @@
 package xyz.helyaxapps.venturenews.listeners;
 
-public class MemberStatusChecker
+
+import net.dv8tion.jda.core.events.Event;
+
+public class MemberStatusChecker extends
 {
 
 
-    
+
+
+    public void onEvent(Event event) {
+
+
+    }
 }

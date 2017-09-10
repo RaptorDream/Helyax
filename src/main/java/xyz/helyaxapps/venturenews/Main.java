@@ -50,7 +50,7 @@ public class Main
         {
 
             jda = new JDABuilder(AccountType.BOT)
-                    .addEventListener(new PingCommand(), new UserStatusChecker())
+                    .addEventListener(new PingCommand(), new MemberStatusChecker())
                     .setToken(BOT_TOKEN)
                     .setGame(Game.of(BOT_GAME))
                     .buildAsync();
