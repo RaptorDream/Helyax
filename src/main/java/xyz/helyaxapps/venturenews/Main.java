@@ -8,7 +8,6 @@ import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
 import org.json.JSONObject;
 import xyz.helyaxapps.venturenews.commands.PingCommand;
-import xyz.helyaxapps.venturenews.listeners.UserStatusChecker;
 
 import javax.security.auth.login.LoginException;
 import java.io.File;
