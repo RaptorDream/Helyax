@@ -8,6 +8,7 @@ import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
 import org.json.JSONObject;
 import xyz.helyaxapps.venturenews.commands.PingCommand;
+import xyz.helyaxapps.venturenews.listeners.MemberStatusChecker;
 
 import javax.security.auth.login.LoginException;
 import java.io.File;
@@ -50,7 +51,7 @@ public class Main
         {
 
             jda = new JDABuilder(AccountType.BOT)
-                    .addEventListener(new PingCommand(), new UserStatusChecker())
+                    .addEventListener(new PingCommand(), new MemberStatusChecker())
                     .setToken(BOT_TOKEN)
                     .setGame(Game.of(BOT_GAME))
                     .buildAsync();
