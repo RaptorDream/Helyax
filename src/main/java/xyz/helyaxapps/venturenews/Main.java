@@ -31,6 +31,7 @@ public class Main
     {
 
         System.out.println(Instant.now() + " Starting...");
+        
         try
         {
             config = new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir") + File.separator + "conf" + File.separator + "bot.json")));
