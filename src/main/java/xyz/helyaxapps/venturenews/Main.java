@@ -75,7 +75,7 @@ public class Main
     }
 
     /**
-     *@return JDA object
+     *@return The JDA object instance used by the bot
      */
     private static JDA getJda()
     {

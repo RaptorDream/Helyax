@@ -20,6 +20,7 @@ public class PingCommand extends ListenerAdapter
         if (event.getMessage().getRawContent().equalsIgnoreCase("vn:ping"))
         {
             system_time = System.currentTimeMillis();
+
             event.getChannel().sendMessage("Pong!").queue( message -> message.editMessageFormat(" :ping_pong:  Pong! ``%dms``", System.currentTimeMillis() - system_time).complete());
         }
     }
