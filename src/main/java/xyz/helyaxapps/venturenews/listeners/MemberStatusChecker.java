@@ -1,3 +1,18 @@
+/*
+ * Copyright 2017 DATCHANAMOURTY Rohitkumar (rdatchane.19@gmail.com) & PHIMANESONE Alex
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
 package xyz.helyaxapps.venturenews.listeners;
 
 
@@ -23,7 +38,7 @@ public class MemberStatusChecker extends ListenerAdapter {
         MessageEmbed embedin = new EmbedBuilder()                                       //Embed for logged in members
 
                 .setAuthor("Venture News", null, null)
-                .setDescription(event.getUser().getAsMention() + " has been logged in")
+                .setDescription("**" + event.getUser().getName() + "** has logged in")
                 //.appendDescription("append")
                 .setThumbnail(event.getUser().getAvatarUrl())
                 //.appendDescription(null)//+ "\r")
@@ -34,7 +49,7 @@ public class MemberStatusChecker extends ListenerAdapter {
         MessageEmbed embedout = new EmbedBuilder()                                      //Embed for logged out members
 
                 .setAuthor("Venture News", null, null)
-                .setDescription(event.getUser().getAsMention() + " has been logged out")
+                .setDescription("**" + event.getUser().getName() + "** has logged out")
                 //.appendDescription("append")
                 .setThumbnail(event.getUser().getAvatarUrl())
                 //.appendDescription(null)//+ "\r")
@@ -43,7 +58,7 @@ public class MemberStatusChecker extends ListenerAdapter {
                 .build();
 
 
-        String[] staffMemberId = {"249225518077968384", "276123714859565068"};
+        String[] staffMemberId = {"319136230803767297", /*SkyriaS*/ "276123714859565068", "173294860063735808", "260485852935880705"};
 
         /*
         int count = 0;
@@ -62,21 +77,21 @@ public class MemberStatusChecker extends ListenerAdapter {
 
                 if (event.getPreviousOnlineStatus() == OnlineStatus.ONLINE || event.getPreviousOnlineStatus() == OnlineStatus.IDLE || event.getPreviousOnlineStatus() == OnlineStatus.DO_NOT_DISTURB) {                           //Verify if the previous status of the member was ONLINE, IDLE or DO_NOT_DISTURB
 
-                    event.getGuild().getTextChannelById("356075105509572608").sendMessage(embedout).queue();
+                    event.getGuild().getTextChannelById("322266175717507082").sendMessage(embedout).queue();            //Sending corresponding embed
                 }
 
             } else if (event.getGuild().getMemberById(IdDetail).getOnlineStatus() == OnlineStatus.ONLINE || event.getGuild().getMemberById(IdDetail).getOnlineStatus() == OnlineStatus.IDLE || event.getGuild().getMemberById(IdDetail).getOnlineStatus() == OnlineStatus.DO_NOT_DISTURB) { //Verify if the current status of the member is ONLINE, IDLE or DO_NOT_DISTURB
 
                 if (event.getPreviousOnlineStatus() == OnlineStatus.OFFLINE) {                              //Verify if the previous status of the member was OFFLINE
 
-                    event.getGuild().getTextChannelById("356075105509572608").sendMessage(embedin).queue();
+                    event.getGuild().getTextChannelById("322266175717507082").sendMessage(embedin).queue();     //Sending corresponding embed
 
 
 
                 } else if (event.getPreviousOnlineStatus() == OnlineStatus.INVISIBLE) {                    //Also verify if the previous status of the member was INVISIBLE
 
 
-                    event.getGuild().getTextChannelById("356075105509572608").sendMessage(embedin).queue();
+                    event.getGuild().getTextChannelById("322266175717507082").sendMessage(embedin).queue();     //Sending corresponding embed
 
 
                 }
@@ -89,5 +104,4 @@ public class MemberStatusChecker extends ListenerAdapter {
     }
   }
 }
-
 
